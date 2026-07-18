@@ -3,6 +3,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Header from "./components/Header";
+import Pedidos from "./pages/Pedidos";
+import PublicRouter from "./components/PublicRouter";
 
 const Leyout = () => {
   return (
@@ -18,17 +20,29 @@ export const router = createBrowserRouter([
     element: <Leyout />,
     children: [
       {
-        path: "",
+        path: "/",
         element: <Home />,
+      },
+      {
+        path: "/pedidos",
+        element: <Pedidos />,
       },
     ],
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <PublicRouter>
+        <Login />
+      </PublicRouter>
+    ),
   },
   {
     path: "/register",
-    element: <Register />,
+    element: (
+      <PublicRouter>
+        <Register />
+      </PublicRouter>
+    ),
   },
 ]);
