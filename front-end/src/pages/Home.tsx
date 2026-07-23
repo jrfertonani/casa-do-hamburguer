@@ -29,7 +29,7 @@ const Home = () => {
 
       const data = await responser.json();
 
-      // setProducts(data);
+      setProducts(data);
     } catch (error) {
       console.log("error");
       return;
@@ -78,6 +78,7 @@ const Home = () => {
             price={product.price}
             category={product.category}
             key={product.id}
+            setProducts={setProducts}
           />
         ))}
         {filterProduct.length === 0 && <p>Não há producots desta categoria</p>}
