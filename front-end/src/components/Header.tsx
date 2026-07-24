@@ -3,10 +3,12 @@ import { UserContext } from "../contexts/UserContext";
 import { useContext, useEffect, useState } from "react";
 import { LogOut, ShoppingCart, Box, LayoutDashboard, Plus } from "lucide-react";
 import Cart from "./Cart";
+import { CartItemContext } from "../contexts/CartItemsContext";
 
 const Header = () => {
   const [showCart, setShowCart] = useState<boolean>(false);
   const { user, setUser } = useContext(UserContext);
+  const { cartItems } = useContext(CartItemContext);
   const location = useLocation();
 
   const handleAuthUser = async () => {
