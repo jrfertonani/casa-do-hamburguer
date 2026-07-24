@@ -103,7 +103,7 @@ const Header = () => {
             <div className="relative cursor-pointer">
               <ShoppingCart size={18} onClick={() => setShowCart(!showCart)} />
               <p className="absolute -top-4 -right-4 flex h-5 w-5 items-center justify-center rounded-full bg-[#F2DAAC] p-1 text-[#161410]">
-                1
+                {cartItems.length}
               </p>
             </div>
 
