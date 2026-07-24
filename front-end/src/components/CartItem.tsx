@@ -1,30 +1,36 @@
 import { ChevronLeft, Trash } from "lucide-react";
+import { formatterPrice } from "../utils/formatterPrice ";
 
-const CartItem = () => {
+type CartItemType = {
+  title: string;
+  price: number;
+  img: string;
+  id: string;
+};
+
+const CartItem = ({ title, price, img, id }: CartItemType) => {
   return (
     <div className="flex items-center gap-3">
-      <img
-        src="./duplo-da-casa.png"
-        alt=""
-        className="w-[100px] rounded-md"
-      ></img>
+      <img src={`./${img}`} alt="" className="w-[100px] rounded-md"></img>
       <div className="flex-1">
-        <p className="font-bold uppercase">DUPLO DA CASA</p>
-        <p className="font-bold text-[#848484]">R$ 28.90</p>
-        <div className="mt-1 flex gap-4">
+        <p className="text-sm font-bold uppercase">{title}</p>
+        <p className="text-sm font-bold text-[#848484]">
+          {formatterPrice(price)}
+        </p>
+        <div className="mt-1 flex items-center gap-4">
           <ChevronLeft
             className="cursor-pointer rounded-md bg-[#C92A0E] p-1 text-white"
             size={25}
           />
 
-          <p className="font-bold">1</p>
+          <p className="text-sm font-bold">1</p>
           <ChevronLeft
             className="rotate-180 cursor-pointer rounded-md bg-[#C92A0E] p-1 text-white"
             size={25}
           />
         </div>
       </div>
-      <Trash size={18} className="cursor-pointer" />
+      <Trash size={18} className="cursor-pointer" onClick={() => alert(id)} />
     </div>
   );
 };
