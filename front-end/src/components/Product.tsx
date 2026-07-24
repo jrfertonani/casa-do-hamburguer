@@ -79,7 +79,11 @@ export const Product = ({
           </p>
           <div className="grap-2 flex items-center justify-end">
             <p className="text-sm text-[#F2DAAC]">{formatterPrice(price)}</p>
-            <ShoppingBag size={18} className="cursor-pointer" />
+            <ShoppingBag
+              size={18}
+              className="cursor-pointer"
+              onClick={() => alert(id)}
+            />
           </div>
         </div>
       </div>
