@@ -8,13 +8,19 @@ datasource db {
 }
 
 model User {
+<<<<<<< HEAD
   id    String @id @default(uuid())
   name  String
+=======
+  id   String @id @default(uuid())
+  name String 
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
   email String @unique
   password String
   cep String
   admin Boolean @default(false)
 
+<<<<<<< HEAD
   cartItems CartItem[]
 }
 
@@ -40,3 +46,32 @@ model CartItem {
   userId String
   user User @relation(fields: [userId], references: [id])
 }
+=======
+  carItems CartItem[]
+}
+
+
+model Product {
+  id   String @id @default(uuid())
+  name String
+  description String
+  price Int
+  category String 
+  img String
+  createAt DateTime @default(now())
+
+  carItems CartItem[]
+}
+
+
+model CartItem {
+  id   String @id @default(uuid())
+  quantity Int @default(1)
+
+  productId String
+  product Product @relation(fields:[productId], references:[id])
+
+  userId String
+  user User @relation(fields:[userId], references:[id])
+}
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee

@@ -15,28 +15,49 @@ const Register = () => {
     e.preventDefault();
 
     try {
+<<<<<<< HEAD
       if (!email || !email || !password || !cep) {
         setError("Todas as informações são obrigatórias");
+=======
+      if (!name || !email || !password || !cep) {
+        setError("Todas as informações são obrigatorias");
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
         return;
       }
 
       if (password !== confirmPassword) {
         setError("Senhas não conferem");
+<<<<<<< HEAD
         return;
+=======
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
       }
 
       const response = await fetch("http://localhost:3000/register", {
         method: "POST",
+<<<<<<< HEAD
         headers: { "Content-Type": "application/json" },
+=======
+        headers: {
+          "Content-Type": "application/json",
+        },
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
         body: JSON.stringify({ name, email, password, cep }),
       });
 
       switch (response.status) {
         case 409:
+<<<<<<< HEAD
           setError("E-mail já cadastrado");
           break;
         case 400:
           setError("Todas as informações são obrigatórias");
+=======
+          setError("Email já cadastrado");
+          break;
+        case 400:
+          setError("Todas as informações são obrigatorias");
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
           break;
         case 201:
           setName("");
@@ -52,18 +73,32 @@ const Register = () => {
         default:
           setError("");
       }
+<<<<<<< HEAD
 
       const data = await response.json();
+=======
+      const data = await response.json();
+
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
       console.log(data);
     } catch (error) {
       console.log(error);
       return;
     }
+<<<<<<< HEAD
+=======
+
+    // console.log({ name, email, password, confirmPassword, cep });
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
   }
 
   return (
     <form
+<<<<<<< HEAD
       className="flex h-screen items-center justify-center bg-[#161410]"
+=======
+      className="flex h-screen items-center justify-center bg-[#171410]"
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col justify-center gap-2">
@@ -76,28 +111,42 @@ const Register = () => {
           onChange={(e) => setName(e.target.value)}
           value={name}
         />
+<<<<<<< HEAD
 
+=======
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
         <Input
           placeholder="Email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
+<<<<<<< HEAD
 
+=======
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
         <Input
           placeholder="Senha"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
+<<<<<<< HEAD
 
         <Input
           placeholder="Confirme sua Senha"
+=======
+        <Input
+          placeholder="Confirme sua senha"
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
           type="password"
           onChange={(e) => setConfirmPassword(e.target.value)}
           value={confirmPassword}
         />
+<<<<<<< HEAD
 
+=======
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
         <Input
           placeholder="CEP"
           type="text"
@@ -107,10 +156,16 @@ const Register = () => {
         <p className="font-bold text-red-500">{error}</p>
 
         <div className="mt-3 flex w-full flex-col gap-2">
+<<<<<<< HEAD
           <Button title="Criar conta" type="submit" />
 
           <Link to="/login" className="w-full">
             <Button title="Já tenho uma conta" variant="outline" />
+=======
+          <Button title={"Criar conta"} type="submit" />
+          <Link to="/login" className="w-full">
+            <Button title={"Já tenho uma conta"} variant="outline" />
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
           </Link>
         </div>
       </div>

@@ -48,11 +48,19 @@ const Pedidos = () => {
       <div className="grid grid-cols-3 gap-3">
         <CardPedido
           id={2}
+<<<<<<< HEAD
           name="Odair Michael"
           date="27/12/2027"
           orderTime="21:00"
           deliveredTime="21:15"
           total={124.75}
+=======
+          name="Ademir Fertonani"
+          date="10/10/1000"
+          orderTime="21:00"
+          deliveredTime="21:15"
+          total={124.88}
+>>>>>>> ce037113d509e9985f28ad20e3d581562529f4ee
         />
       </div>
     </div>
